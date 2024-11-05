@@ -295,9 +295,7 @@ function getSumToN(n) {
  */
 function getSumOfDigits(num) {
   const numArr = num.toString().split('');
-  return numArr.reduce((acc, cur) => {
-    return parseInt(acc, 10) + parseInt(cur, 10);
-  }, 0);
+  return numArr.reduce((acc, cur) => acc + Number(cur), 0);
 }
 
 /**
