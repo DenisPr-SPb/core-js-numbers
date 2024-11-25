@@ -127,7 +127,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  return parseInt(value.toString().slice(-1), 10);
+  return value % 10;
 }
 
 /**
@@ -244,7 +244,7 @@ function toNumber(value, def) {
  *   0  => 0
  */
 function getCube(num) {
-  return num * num * num;
+  return Math.floor(num) ** 3;
 }
 
 /**
@@ -446,7 +446,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(str) {
-  return parseFloat(str);
+  return Number.parseFloat(str);
 }
 
 /**
@@ -464,7 +464,7 @@ function getFloatOnString(str) {
  * '10', 8              => 8
  */
 function getIntegerOnString(str, base) {
-  return parseInt(str, base);
+  return Number.parseInt(str, base);
 }
 
 /**
@@ -599,8 +599,7 @@ function getRandomInteger(min, max) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  const result = Math.sqrt(a * a + b * b);
-  return result === Infinity ? Number.MAX_VALUE : result;
+  return Math.hypot(a, b);
 }
 
 /**
